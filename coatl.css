@@ -1,0 +1,1765 @@
+/**
+ *------
+ * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
+ * coatl implementation : © Ábel Tibor Tóth <toth.abel.tibor2@gmail.com>
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * coatl.css
+ *
+ * Stylesheet for the game in BGA framework
+ * https://en.doc.boardgamearena.com/Game_interface_stylesheet:_yourgamename.css
+ */
+
+@font-face {
+	font-family:	aztec;
+	src:			url(img/font/chinese-rocks-rg.otf) format("opentype");
+}
+
+@font-face {
+	font-family:	comicSans;
+	src:			url(img/font/BadComic-Regular.ttf) format("opentype");
+}
+
+html {
+	--font:	unset;
+	cursor:	default;
+}
+html.thematic_font {
+	--font: comicSans;
+}
+html.thematic_background {
+	background-image:	url(img/background.jpg);
+	background-size:	600px 600px;
+}
+
+@media (width <= 980px) {
+	html.thematic_background {
+		background-size: 300px 300px;
+	}
+}
+
+#game_play_area {
+	display:	flex;
+	flex-wrap:	wrap;
+}
+
+h2, h3 {
+	font-family:	aztec, serif;
+	letter-spacing:	1px;
+	color:			rgb(127, 87, 23);
+}
+h2 {
+	font-size:		19px;
+	font-weight:	bold;
+}
+
+h4, h5 {
+	font-family: var(--font);
+}
+
+#logs .log {
+	font-family: var(--font);
+}
+
+#logs .log .roundedbox {
+	background-size:		cover, cover;
+	background-repeat:		no-repeat, repeat;
+	background-position-x:	right;
+	background-position-y:	bottom;
+	background-image:		linear-gradient(rgba(255, 255, 255, 0.7), rgb(255, 255, 255, 0.5)),
+							url(img/rulebook_background_mirrored.jpg);
+}
+
+#logs .log.cancel .roundedbox {
+	background-image:	linear-gradient(rgba(167, 69, 69, 0.4), rgb(167, 69, 69, 0.2)),
+						url(img/rulebook_background_mirrored.jpg);
+	text-decoration:	line-through;
+}
+
+#logs .log .timestamp {
+	margin-top:			0;
+	padding-top:		4px;
+	background-color:	rgba(255, 255, 255, 0.3);
+	color:				black;
+}
+#logs .log.cancel .timestamp {
+	background-color: rgba(167, 69, 69, 0.3);
+}
+
+.counter_in_progress {
+	color: #D48D15 !important;
+}
+
+.dijitTooltipContainer,
+.standard_popin {
+	font-family:		var(--font);
+	background-image:	linear-gradient(rgba(255, 255, 255, 0.6), rgb(255, 255, 255, 0.8)),
+						url(img/rulebook_background_mirrored.jpg) !important;
+	background-size:	auto 100% !important;
+}
+#popin_bagPieces {
+	width: 680px !important;
+}
+
+#player_board_title {
+	height:				110px;
+	width:				auto;
+	background-image:	url("img/title.png");
+	background-size:	100% auto;
+	background-repeat:	no-repeat;
+}
+
+@media (width <= 980px) {
+	#player_board_title {
+		display: none;
+	}
+}
+
+.bgabutton {
+	font-family: var(--font);
+}
+
+.bgabutton.orange {
+	background:		#D48D15 !important;
+	border-color:	#8C6737 !important;
+}
+
+#page-title {
+	z-index:				10;
+	font-family:			var(--font);
+	background-size:		contain, contain;
+	background-repeat:		no-repeat, repeat;
+	background-position-x:	right;
+	background-position-y:	bottom;
+	background-image:		linear-gradient(rgba(255, 255, 255, 0.7), rgb(255, 255, 255, 0.5)),
+							url(img/rulebook_background_mirrored.jpg);
+}
+
+html.giveup #page-title #on_give_up {
+	display: none;
+}
+
+#help-bar {
+	height:				auto;
+	margin-top:			5px;
+	background-color:	rgba(212, 141, 21, 0.6);
+}
+
+#help-bar-blue {
+	height:				auto;
+	margin-top:			5px;
+	background-color:	rgba(21, 177, 212, 0.6);
+}
+
+#love-bar {
+	height:				auto;
+	margin-top:			5px;
+	background-color:	rgb(220, 108, 255, 0.6);
+}
+
+#player_boards .player-board {
+	border-style:			solid;
+	border-color:			black !important;
+	border-width:			1px;
+	background-size:		cover, auto 70%, cover;
+	background-repeat:		no-repeat;
+	background-position-x:	right;
+	background-position-y:	bottom;
+	padding-bottom:			10px;
+}
+
+#player_boards .player_board_color_799C61 {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(121, 156, 97, 0.5)),
+						url(img/gods/green.png),
+						url(img/rulebook_background.jpg);
+}
+#player_boards .player_board_color_3F8AA4 {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgb(63, 138, 164, 0.5)),
+						url(img/gods/blue.png),
+						url(img/rulebook_background.jpg);
+}
+#player_boards .player_board_color_A74545 {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgb(167, 69, 69, 0.5)),
+						url(img/gods/red.png),
+						url(img/rulebook_background.jpg);
+}
+#player_boards .player_board_color_FAB859 {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgb(250, 184, 89, 0.5)),
+						url(img/gods/yellow.png),
+						url(img/rulebook_background.jpg);
+}
+
+#player_boards .player-name,
+#player_boards .player_score_value {font-family: aztec, serif;}
+#player_boards .gamerank_value,
+#player_boards .timeToThink,
+#player_boards .doubletime_infos {font-family: var(--font);}
+
+#player_boards .player-board-game-specific-content {
+	display:		flex;
+	flex-direction:	column;
+}
+#player_boards .player-board-game-specific-content div:has([display="block"]) {
+	display:	flex;
+	height:		auto;
+	margin:		8px 3px 2px 3px;
+}
+#player_boards .player-board-game-specific-content p {
+	margin:			auto 0 auto 0;
+	font-family:	var(--font);
+}
+
+#player_boards .player-board-game-specific-content prophecy_icon {
+	width:				28px;
+	height:				40px;
+	margin:				auto 8px auto 4px;
+	border-radius:		2px;
+	box-shadow:			0 0 2px #000;
+	background-image:	url(img/prophecy_deck.jpg);
+	background-repeat:	no-repeat;
+	background-size:	100% 100%;
+}
+
+#player_boards .player-board-game-specific-content temple_icon {
+	width:					30px;
+	height:					45px;
+	margin:					0 8px 0 4px;
+	border-radius:			2px;
+	box-shadow:				0 0 2px #000;
+	background-image:		url(img/temple_cards.jpg);
+	background-repeat:		no-repeat;
+	background-size:		auto 180px;
+	background-position:	-56.8px -134.8px;
+}
+
+#player_boards .player-board-game-specific-content player_token {
+	height:					45px;
+	width:					45px;
+	background-repeat:		no-repeat;
+	margin:					0 2px 0 2px;
+	background-position:	0 0;
+	filter:					drop-shadow(0px 0px 2px #000)
+}
+
+#player_boards .player-board-game-specific-content player_token[type="first_player"] {
+	background-image:	url(img/first_player.png);
+	background-size:	45px 45px;
+}
+#player_boards .player-board-game-specific-content player_token[type="piece"] {
+	background-image:		url(img/sacrifice.png);
+	background-size:		135px 45px;
+	background-position:	0;
+}
+#player_boards .player-board-game-specific-content player_token[type="prophecy"] {
+	background-image:		url(img/sacrifice.png);
+	background-size:		135px 45px;
+	background-position:	-45px;
+}
+#player_boards .player-board-game-specific-content player_token[type="temple"] {
+	background-image:		url(img/sacrifice.png);
+	background-size:		135px 45px;
+	background-position:	-90px;
+}
+#player_boards .player-board-game-specific-content player_token[display="none"] {
+	display: none;
+}
+#player_boards .player-board-game-specific-content player_token[active="true"][pointer="true"] {
+	cursor: pointer;
+}
+#player_boards .player-board-game-specific-content player_token[active="false"] {
+}
+#player_boards .player-board-game-specific-content player_token[active="false"]:hover,
+#player_boards .player-board-game-specific-content player_token[active="false"]:focus {
+	pointer-events: auto;
+}
+#player_boards .player-board-game-specific-content player_token[active="false"]:active {
+	pointer-events: none;
+}
+perfect_pick_log_icon {
+	height:				20px;
+	width:				20px;
+	display:			inline-block;
+	position:			relative;
+	vertical-align:		top;
+	background-image:	url(img/sacrifice.png);
+	background-size:	60px 20px;
+	filter:				drop-shadow(0px 0px 1px #000);
+}
+see_the_future_statusbar_icon {
+	margin:					0 2px 0 2px;
+	height:					30px;
+	width:					30px;
+	display:				inline-block;
+	position:				relative;
+	vertical-align:			middle;
+	background-image:		url(img/sacrifice.png);
+	background-size:		90px 30px;
+	background-position:	-30px;
+	filter:					drop-shadow(0px 0px 1px #000);
+}
+see_the_future_log_icon {
+	height:					20px;
+	width:					20px;
+	display:				inline-block;
+	position:				relative;
+	vertical-align:			top;
+	background-image:		url(img/sacrifice.png);
+	background-size:		60px 20px;
+	background-position:	-20px;
+	filter:					drop-shadow(0px 0px 1px #000);
+}
+priest_commitment_statusbar_icon {
+	margin:					0 2px 0 2px;
+	height:					30px;
+	width:					30px;
+	display:				inline-block;
+	position:				relative;
+	vertical-align:			middle;
+	background-image:		url(img/sacrifice.png);
+	background-size:		90px 30px;
+	background-position:	-60px;
+	filter:					drop-shadow(0px 0px 1px #000);
+}
+priest_commitment_log_icon {
+	height:					20px;
+	width:					20px;
+	display:				inline-block;
+	position:				relative;
+	vertical-align:			top;
+	background-image:		url(img/sacrifice.png);
+	background-size:		60px 20px;
+	background-position:	-40px;
+	filter:					drop-shadow(0px 0px 1px #000);
+}
+
+piece {
+	height:				68px !important;
+	transform:			rotate(0deg);
+	position:			absolute;
+	background:			url(img/pieces.png) no-repeat 0 0;
+	background-size:	300px auto;
+	user-select:		none;
+	transition:			transform 0.5s;
+}
+
+/* Css-sprite for background */
+piece[type="head"] {
+	width:					100px !important;
+	background-position-x:	0;
+}
+piece[type="body"] {
+	width:					60px !important;
+	background-position-x:	-120px;
+}
+piece[type="tail"] {
+	width:					110px !important;
+	background-position-x:	-190px;
+}
+
+piece[color="yellow"] {background-position-y: 0;}
+piece[color="red"] {background-position-y: -68px;}
+piece[color="black"] {background-position-y: -136px;}
+piece[color="green"] {background-position-y: -204px;}
+piece[color="blue"] {background-position-y: -270px;}
+piece[color="gold"] {background-position-y: -338px;}
+
+html.colorblind piece:after,
+html.colorblind gold_icon:after {
+	bottom:				0;
+	left:				0;
+	right:				0;
+	top:				0;
+	font-size:			160%;
+	align-items:		center;
+	color:				#FFF;
+	display:			flex;
+	justify-content:	center;
+	position:			absolute;
+	text-shadow:		0.5px 0.5px 3px #000, 0.5px -0.5px 3px #000, -0.5px 0.5px 3px #000, -0.5px -0.5px 3px #000;
+	transition:			transform 0.5s;
+}
+html.colorblind piece[color="yellow"]:after {content: "◆";}
+html.colorblind piece[color="red"]:after {content: "⬟";}
+html.colorblind piece[color="black"]:after {content: "■";}
+html.colorblind piece[color="green"]:after {
+	content:	"●";
+	font-size:	210%;
+}
+html.colorblind piece[color="blue"]:after {content: "▲";}
+html.colorblind piece[color="gold"]:after {content: "★";}
+html.colorblind gold_icon:after {
+	content:	"★";
+	transform:	rotate(20deg);
+}
+
+piece_log_icon {
+	height:				34px !important;
+	display:			inline-block;
+	position:			relative;
+	vertical-align:		top;
+	background:			url(img/pieces.png) no-repeat 0 0;
+	background-size:	150px auto;
+}
+piece_log_icon[type="head"] {
+	width:					50px !important;
+	background-position-x:	0;
+}
+piece_log_icon[type="body"] {
+	width:					30px !important;
+	background-position-x:	-60px;
+}
+piece_log_icon[type="tail"] {
+	width:					55px !important;
+	background-position-x:	-95px;
+}
+
+html.colorblind piece_log_icon:after {
+	bottom:				0;
+	left:				0;
+	right:				0;
+	top:				0;
+	font-size:			100%;
+	align-items:		center;
+	color:				#FFF;
+	display:			flex;
+	justify-content:	center;
+	position:			absolute;
+	text-shadow:		0.5px 0.5px 3px #000, 0.5px -0.5px 3px #000, -0.5px 0.5px 3px #000, -0.5px -0.5px 3px #000;
+	transition:			transform 0.5s;
+}
+piece_log_icon[color="yellow"] {background-position-y: 0;}
+piece_log_icon[color="red"] {background-position-y: -34px;}
+piece_log_icon[color="black"] {background-position-y: -68px;}
+piece_log_icon[color="green"] {background-position-y: -102px;}
+piece_log_icon[color="blue"] {background-position-y: -136px;}
+piece_log_icon[color="golden"] {background-position-y: -170px;}
+html.colorblind piece_log_icon[color="yellow"]:after {content: "◆";}
+html.colorblind piece_log_icon[color="red"]:after {content: "⬟";}
+html.colorblind piece_log_icon[color="black"]:after {content: "■";}
+html.colorblind piece_log_icon[color="green"]:after {
+	content:	"●";
+	font-size:	150%;
+}
+html.colorblind piece_log_icon[color="blue"]:after {content: "▲";}
+html.colorblind piece_log_icon[color="golden"]:after {content: "★";}
+
+/* Rotations on supply board */
+piece[type="head"][rotate="supply_piece_1"] {transform: rotate(0deg);}
+piece[type="head"][rotate="supply_piece_2"] {transform: rotate(180deg);}
+piece[type="head"][rotate="supply_piece_2"]:after {transform: rotate(-180deg);}
+
+piece[type="body"][rotate="supply_piece_1"] {transform: rotate(-81deg);}
+piece[type="body"][rotate="supply_piece_1"]:after {transform: rotate(81deg);}
+piece[type="body"][rotate="supply_piece_-1"] {transform: rotate(-55deg);}
+piece[type="body"][rotate="supply_piece_-1"]:after {transform: rotate(55deg);}
+piece[type="body"][rotate="supply_piece_2"] {transform: rotate(-23deg);}
+piece[type="body"][rotate="supply_piece_2"]:after {transform: rotate(23deg);}
+piece[type="body"][rotate="supply_piece_-2"] {transform: rotate(9deg);}
+piece[type="body"][rotate="supply_piece_-2"]:after {transform: rotate(-9deg);}
+piece[type="body"][rotate="supply_piece_3"] {transform: rotate(48deg);}
+piece[type="body"][rotate="supply_piece_3"]:after {transform: rotate(-48deg);}
+piece[type="body"][rotate="supply_piece_-3"] {transform: rotate(62deg);}
+piece[type="body"][rotate="supply_piece_-3"]:after {transform: rotate(-62deg);}
+piece[type="body"][rotate="supply_piece_4"] {transform: rotate(103deg);}
+piece[type="body"][rotate="supply_piece_4"]:after {transform: rotate(-103deg);}
+piece[type="body"][rotate="supply_piece_-4"] {transform: rotate(118deg);}
+piece[type="body"][rotate="supply_piece_-4"]:after {transform: rotate(-118deg);}
+piece[type="body"][rotate="supply_piece_5"] {transform: rotate(162deg);}
+piece[type="body"][rotate="supply_piece_5"]:after {transform: rotate(-162deg);}
+piece[type="body"][rotate="supply_piece_-5"] {transform: rotate(-171deg);}
+piece[type="body"][rotate="supply_piece_-5"]:after {transform: rotate(171deg);}
+piece[type="body"][rotate="supply_piece_6"] {transform: rotate(217deg);}
+piece[type="body"][rotate="supply_piece_6"]:after {transform: rotate(-217deg);}
+piece[type="body"][rotate="supply_piece_-6"] {transform: rotate(240deg);}
+piece[type="body"][rotate="supply_piece_-6"]:after {transform: rotate(-240deg);}
+
+piece[type="tail"][rotate="supply_piece_1"] {transform: rotate(270deg);}
+piece[type="tail"][rotate="supply_piece_1"]:after {transform: rotate(-270deg);}
+piece[type="tail"][rotate="supply_piece_2"] {transform: rotate(90deg);}
+piece[type="tail"][rotate="supply_piece_2"]:after {transform: rotate(-90deg);}
+
+/* Rotations on player board */
+piece[rotate="player_board"] {transform: rotate(30deg);}
+piece[rotate="player_board"]:after {transform: rotate(-30deg);}
+
+/* Effect on selector hover */
+
+@media (hover: hover) and (pointer: fine) {
+	piece[shadow="white"] {filter: drop-shadow(1px 1px #FFFFFFFF) drop-shadow(-1px 1px #FFFFFFFF) drop-shadow(1px -1px #FFFFFFFF) drop-shadow(-1px -1px #FFFFFFFF);}
+}
+piece[shadow="orange"] {filter: drop-shadow(2px 2px #ED980E) drop-shadow(-2px 2px #ED980E) drop-shadow(2px -2px #ED980E) drop-shadow(-2px -2px #ED980E);}
+
+#game_play_area {
+	display: flex;
+}
+
+supplies {
+	width:				100%;
+	height:				auto;
+	display:			flex;
+	flex-wrap:			wrap;
+	justify-content:	center;
+	align-items:		center;
+	grid-column-gap:	15px;
+}
+
+supply_piece {
+	display:			block;
+	position:			relative;
+	height:				500px;
+	width:				500px;
+	background:			url(img/supply_piece_board.png) no-repeat 0 0;
+	background-size:	cover;
+	justify-content:	unset;
+	align-items:		unset;
+}
+
+/* BAGS */
+
+supply_piece bag {
+	position:			absolute;
+	height:				120px;
+	width:				80px;
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+	background:			url(img/bags.png) no-repeat;
+	background-size:	cover;
+}
+
+supply_piece bag[type="head"] {
+	top:					5px;
+	left:					-7px;
+	background-position:	-5px 0;
+	transform:				rotate(-47deg);
+}
+
+supply_piece bag[type="body"] {
+	top:					-40px;
+	left:					28px;
+	height:					131px;
+	background-position:	-181px 0;
+	transform:				rotate(-37deg);
+}
+
+supply_piece bag[type="tail"] {
+	top:					-59px;
+	left:					79px;
+	background-position:	-85px 0;
+	transform:				rotate(-24deg);
+}
+
+supply_piece bag span {
+	font-family:	aztec, serif;
+	font-size:		22px;
+	font-weight:	bolder;
+	text-shadow:	rgb(255, 255, 255) 2px 2px 1px,
+					rgb(255, 255, 255) -2px 2px 1px,
+					rgb(255, 255, 255) 2px -2px 1px,
+					rgb(255, 255, 255) -2px -2px 1px;
+	user-select:	none;
+}
+
+supply_piece bag[type="head"] span {
+	margin-right:	-21px;
+	margin-bottom:	-91px;
+	color:			rgb(109, 63, 49);
+}
+
+supply_piece bag[type="body"] span {
+	margin-right:	-30px;
+	margin-bottom:	-95px;
+	color:			rgb(109, 111, 113);
+}
+
+supply_piece bag[type="tail"] span {
+	margin-right:	-27px;
+	margin-bottom:	-78px;
+	color:			rgb(21, 127, 146);
+}
+
+#popin_bagPieces_contents {
+	display:			flex;
+	flex-direction:		column;
+	justify-content:	center;
+	align-items:		center;
+}
+
+#popin_bagPieces_contents bagPiecesDialog {
+	display:				grid;
+	grid-template-columns:	auto auto auto auto auto;
+	grid-template-rows: 70px 70px 70px;
+	grid-column-gap:		10px;
+	grid-row-gap:			10px;
+	height:					310px;
+	width:					600px;
+	margin:					20px 20px 20px 20px;
+}
+
+#popin_bagPieces_contents bagPiecesDialog div {
+	height:				70px;
+	width:				110px;
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+}
+
+#popin_bagPieces_contents bagPiecesDialog div piece {cursor: pointer;}
+
+@media (hover: hover) and (pointer: fine) {
+	#popin_bagPieces_contents bagPiecesDialog div piece:hover {filter: drop-shadow(1px 1px #D1CBCB) drop-shadow(-1px 1px #D1CBCB) drop-shadow(1px -1px #D1CBCB) drop-shadow(-1px -1px #D1CBCB);}
+}
+
+#popin_bagPieces_contents bagPiecesDialog[type="all"] div piece,
+#popin_bagPieces_contents bagPiecesDialog[type="body"] div piece:not([type="body"]) {
+	opacity: 0.5;
+}
+#popin_bagPieces_contents bagPiecesDialog div piece[shadow="orange"] {
+	opacity:	1;
+	filter:		drop-shadow(2px 2px #ED980E) drop-shadow(-2px 2px #ED980E) drop-shadow(2px -2px #ED980E) drop-shadow(-2px -2px #ED980E);
+}
+#popin_bagPieces_contents bagPiecesDialog div piece[available="false"] {
+	opacity:		0.1 !important;
+	pointer-events:	none;
+	filter:			drop-shadow(0px 0px 2px rgb(255, 0, 0));
+}
+
+/* BOARD */
+supply_piece space {
+	position: absolute;
+}
+
+supply_piece selector {
+	position:	absolute;
+	z-index:	2;
+}
+
+supply_piece selector[type="head"],
+supply_piece selector[type="tail"] {
+	clip-path:	ellipse(30% 50% at 50% 50%);
+	width:		112px;
+	height:		139px;
+}
+
+supply_piece selector[type="body"] {
+	clip-path:	polygon(100% 100%, 50% 80%, 0 100%, 0 20%, 50% 0, 100% 20%);
+	width:		133px;
+	height:		74px;
+}
+
+supply_piece[active="true"] selector[active="true"],
+supply_piece[active="single"] selector[type="head"][active="true"],
+supply_piece[active="single"] selector[type="tail"][active="true"] {
+	cursor: pointer;
+}
+
+supply_prophecy {
+	width:		524px;
+	padding:	0 0 0 0;
+}
+
+deck_prophecy {
+	width:					160px;
+	height:					222px;
+	border-radius:			10px;
+	box-shadow:				5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+	border:					1px solid rgb(0, 0, 0);
+	background-image:		url(img/prophecy_deck.jpg);
+	background-repeat:		no-repeat;
+	background-size:		100% 100%;
+	background-position:	center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	deck_prophecy:hover,
+	deck_prophecy:focus {
+		pointer-events: auto;
+	}
+
+	deck_prophecy:active {pointer-events: none;}
+}
+deck_prophecy[active="true"] {
+	cursor:			pointer;
+	pointer-events:	auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	deck_prophecy[active="true"]:hover {
+		z-index:	51 !important;
+		box-shadow:	3px 3px 3px 0 rgb(255, 255, 255), 3px -3px 3px 0 rgb(255, 255, 255), -3px -3px 3px 0 rgb(255, 255, 255), -3px 3px 3px 0 rgb(255, 255, 255);
+
+	}
+}
+
+supply_prophecy .stockitem,
+hand_prophecy .stockitem {
+	border-radius:		10px;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	background-size:	1280px 1561px;
+	border:				1px solid rgb(0, 0, 0);
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	supply_prophecy .stockitem_unselectable:hover,
+	hand_prophecy .stockitem_unselectable:hover,
+	hand_temple .stockitem_unselectable:hover,
+	supply_temple .stockitem_unselectable:hover,
+	supply_prophecy .stockitem_unselectable:focus,
+	hand_prophecy .stockitem_unselectable:focus,
+	hand_temple .stockitem_unselectable:focus,
+	supply_temple .stockitem_unselectable:focus {
+		pointer-events: auto;
+	}
+
+	supply_prophecy .stockitem_unselectable:active,
+	hand_prophecy .stockitem_unselectable:active,
+	hand_temple .stockitem_unselectable:active,
+	supply_temple .stockitem_unselectable:active {
+		pointer-events: none;
+	}
+}
+
+html.colorblind supply_prophecy .stockitem symbols,
+html.colorblind hand_prophecy .stockitem symbols {
+	font-size:			130%;
+	color:				#FFF;
+	text-shadow:		0.4px 0.4px 2px #000, 0.4px -0.4px 2px #000, -0.4px 0.4px 2px #000, -0.4px -0.4px 2px #000;
+	bottom:				11px;
+	position:			absolute;
+	background-color:	rgba(0, 0, 0, 0.8);
+	padding-left:		5px;
+	padding-right:		5px;
+}
+html:not(.colorblind) supply_prophecy .stockitem symbols,
+html:not(.colorblind) hand_prophecy .stockitem symbols {
+	display: none;
+}
+html.colorblind supply_prophecy .stockitem card_color_symbol,
+html.colorblind hand_prophecy .stockitem card_color_symbol {
+	font-size:		250%;
+	color:			#FFF;
+	text-shadow:	1px 1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, -1px -1px 2px #000;
+	position:		absolute;
+}
+html:not(.colorblind) supply_prophecy .stockitem card_color_symbol,
+html:not(.colorblind) hand_prophecy .stockitem card_color_symbol {
+	display: none;
+}
+
+hand_prophecy[active="addProphecy"] .stockitem:not(.stockitem_unselectable),
+supply_temple[active="addTemple"] .stockitem:not(.stockitem_unselectable),
+hand_temple[active="addTemple"] .stockitem:not(.stockitem_unselectable) {
+	box-shadow: 0 0 10px 0 #FFA81B
+}
+
+@media (hover: hover) and (pointer: fine) {
+	supply_prophecy .stockitem:not(.stockitem_unselectable):hover,
+	hand_prophecy .stockitem:not(.stockitem_unselectable):hover,
+	supply_temple .stockitem:not(.stockitem_unselectable):hover,
+	hand_temple .stockitem:not(.stockitem_unselectable):hover {
+		z-index:	51 !important;
+		box-shadow:	3px 3px 3px 0 rgb(255, 255, 255), 3px -3px 3px 0 rgb(255, 255, 255), -3px -3px 3px 0 rgb(255, 255, 255), -3px 3px 3px 0 rgb(255, 255, 255);
+	}
+}
+
+hand_prophecy .stockitem:not(.stockitem_unselectable).discard {
+	z-index:	50 !important;
+	box-shadow:	3px 3px 3px 0 rgb(255, 0, 0), 3px -3px 3px 0 rgb(255, 0, 0), -3px -3px 3px 0 rgb(255, 0, 0), -3px 3px 3px 0 rgb(255, 0, 0);
+}
+
+hand_prophecy .stockitem:not(.stockitem_unselectable).addProphecy,
+supply_temple .stockitem:not(.stockitem_unselectable).addTemple,
+hand_temple .stockitem:not(.stockitem_unselectable).addTemple {
+	z-index:	50 !important;
+	box-shadow:	3px 3px 3px 0 #FFA81B, 3px -3px 3px 0 #FFA81B, -3px -3px 3px 0 #FFA81B, -3px 3px 3px 0 #FFA81B;
+}
+
+.prophecy_tooltip_piece {
+	display:				inline-block;
+	width:					60px !important;
+	height:					30px;
+	margin-top:				5px;
+	margin-bottom:			10px;
+	background-image:		url("img/prophecy_piece.png");
+	background-repeat:		no-repeat;
+	background-position:	center;
+	background-size:		auto 30px;
+}
+
+.prophecy_tooltip_infinity {
+	display:				inline-block;
+	width:					70px !important;
+	height:					30px;
+	margin-top:				5px;
+	margin-bottom:			10px;
+	background-image:		url("img/prophecy_infinity.png");
+	background-repeat:		no-repeat;
+	background-position:	center;
+	background-size:		auto 30px;
+}
+
+.prophecy_tooltip_x {
+	display:				inline-block;
+	width:					100px !important;
+	height:					30px;
+	margin-top:				5px;
+	margin-bottom:			10px;
+	background-image:		url("img/prophecy_x.png");
+	background-repeat:		no-repeat;
+	background-position:	center;
+	background-size:		auto 30px;
+}
+
+supply_temple {
+	padding: 0 0 0 0;
+}
+
+supply_temple .stockitem,
+hand_temple .stockitem {
+	border-radius:		10px;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	background-size:	auto 1087.2px;
+	border:				1px solid rgb(0, 0, 0);
+}
+html.colorblind temple_symbol {
+	font-size:		155%;
+	color:			#FFF;
+	text-shadow:	0.5px 0.5px 2px #000, 0.5px -0.5px 2px #000, -0.5px 0.5px 2px #000, -0.5px -0.5px 2px #000;
+	position:		absolute;
+}
+
+html.colorblind temple_symbol[type="block"][position="up"] {top: 187px; left: 77px;}
+html.colorblind temple_symbol[type="block"][position="bottom"] {top: 221px; left: 79px;}
+html.colorblind temple_symbol[type="equal"][position="up"] {top: 183px;}
+html.colorblind temple_symbol[type="equal"][position="bottom"] {top: 223px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"] {top: 219px;}
+html.colorblind temple_symbol[type="equal"][position="up"][item="1"] {left: 41px;}
+html.colorblind temple_symbol[type="equal"][position="bottom"][item="1"] {left: 51px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"][item="1"] {left: 42px;}
+html.colorblind temple_symbol[type="equal"][item="2"] {left: 111px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"][item="2"] {left: 108px;}
+html.colorblind temple_symbol[type="equal"][position="middle"][item="1"] {top: 206px;left: 55px;}
+html.colorblind temple_symbol[type="equal"][position="middle"][item="2"] {top: 209px;left: 97px;}
+html.colorblind temple_symbol[type="card"][position="t-top"] {top: 180px; left: 55px;}
+html.colorblind temple_symbol[type="card"][position="top"] {top: 185px; left: 55px;}
+
+html.colorblind temple_symbol[type="block"][position="up"][label="true"] { top: 12px; left: 61px;}
+html.colorblind temple_symbol[type="block"][position="bottom"][label="true"] {top: 40px; left: 62px;}
+html.colorblind temple_symbol[type="equal"][position="up"][label="true"] {top: 9px;}
+html.colorblind temple_symbol[type="equal"][position="bottom"][label="true"] {top: 41px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"][label="true"] {top: 37px;}
+html.colorblind temple_symbol[type="equal"][position="up"][item="1"][label="true"] {left: 33px;}
+html.colorblind temple_symbol[type="equal"][position="bottom"][item="1"][label="true"] {left: 35px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"][item="1"][label="true"] {left: 33px;}
+html.colorblind temple_symbol[type="equal"][item="2"][label="true"] {left: 86px;}
+html.colorblind temple_symbol[type="equal"][position="s-bottom"][item="2"][label="true"] {left: 89px;}
+html.colorblind temple_symbol[type="equal"][position="middle"][item="1"][label="true"] {top: 28px; left: 42px;}
+html.colorblind temple_symbol[type="equal"][position="middle"][item="2"][label="true"] {top: 28px;left: 78px;}
+html.colorblind temple_symbol[type="card"][position="t-top"][label="true"] {top: 4px; left: 43px;}
+html.colorblind temple_symbol[type="card"][position="top"][label="true"] {top: 8px;left: 43px;}
+
+html:not(.colorblind) temple_symbol,
+html:not(.colorblind) temple_symbol {
+	display: none;
+}
+
+player_area {
+	width:			100%;
+	height:			auto;
+	margin-bottom:	0 !important;
+	display:		flex;
+	flex-direction:	row;
+}
+
+player_area player_board_container {
+	width:	500px;
+	height:	325px;
+}
+
+@media (width <= 1250px) {
+	player_area {
+		width:				100%;
+		height:				auto;
+		display:			flex;
+		flex-direction:		column;
+		justify-content:	center;
+		align-items:		center;
+	}
+
+	player_area player_board_contianer {
+		justify-content: center;
+	}
+}
+
+player_area player_board_container h2 {
+	text-align:		center;
+	margin-bottom:	0 !important;
+}
+
+player_area player_board_container player_board {
+	display:			block;
+	width:				500px;
+	height:				302px;
+	background-image:	url(img/player_boards.png);
+	background-repeat:	no-repeat;
+	background-size:	1000px 604px;
+}
+player_area player_board_container player_board[color="3F8AA4"] {background-position: 0 0;}
+player_area player_board_container player_board[color="A74545"] {background-position: -500px 0;}
+player_area player_board_container player_board[color="799C61"] {background-position: 0 -302px;}
+player_area player_board_container player_board[color="FAB859"] {background-position: -500px -302px;}
+
+player_area player_board_container player_board h2 {
+	margin-left: 60px;
+}
+
+player_area player_board_container selector_grid,
+player_area player_board_container other_selector_grid {
+	position:				relative;
+	top:					80px;
+	left:					76px;
+	width:					345px;
+	height:					151px;
+	display:				inline-grid;
+	grid-template-columns:	86px 86px 86px 86px;
+}
+
+player_area player_board_container selector_grid cell,
+player_area player_board_container other_selector_grid cell {
+	display:	grid;
+	height:		75.5px;
+	width:		86px;
+}
+
+player_area player_board_container selector_grid cell piece_container,
+player_area player_board_container selector_grid cell cellSelector,
+player_area player_board_container other_selector_grid cell piece_container,
+player_area player_board_container other_selector_grid cell cellSelector {
+	position:	absolute;
+	height:		75.5px;
+	width:		86px;
+}
+
+player_area player_board_container selector_grid cell piece_container,
+player_area player_board_container other_selector_grid cell piece_container {
+	z-index: 1;
+}
+
+player_area player_board_container selector_grid cell cellSelector,
+player_area player_board_container other_selector_grid cell cellSelector {
+	pointer-events:	none;
+	z-index:		2;
+}
+
+player_area player_board_container selector_grid[active="true"] cell cellSelector[active="true"]:not([color="gold"]),
+player_area player_board_container other_selector_grid[active="true"] cell cellSelector[active="true"]:not([color="gold"]):not([type="head"]):not([type="tail"]) {
+	pointer-events:	auto;
+	cursor:			pointer;
+}
+
+build_area,
+other_build {
+	height:			auto;
+	display:		flex;
+	flex-direction:	column;
+	align-items:	center;
+	width:			calc(100% - 20px);
+}
+
+build_area {
+	margin-top: 0 !important;
+}
+
+build_area h3 {
+	margin-bottom: 0;
+}
+
+build_area coatls,
+other_build coatls {
+	z-index:		0;
+	display:		flex;
+	flex-direction:	column;
+}
+
+build_area #your_coatls_str {
+	margin: 5px 0 5px 0;
+}
+
+build_area coatls #you_dont_have_coatls_label {
+	font-family: var(--font);
+}
+
+build_area coatls:has(> :nth-child(2)) #you_dont_have_coatls_label {
+	display: none;
+}
+
+build_area coatls .coatl_overall,
+other_build coatls .coatl_overall {
+	width:				100%;
+	display:			flex;
+	margin-bottom:		15px;
+	flex-direction:		column;
+	align-items:		center;
+	justify-content:	center;
+}
+
+build_area coatls .coatl_overall[finished="true"],
+other_build coatls .coatl_overall[finished="true"] {
+	order: 10;
+}
+
+build_area coatls .coatl_container,
+other_build coatls .coatl_container {
+	height:			auto;
+	width:			fit-content;
+	display:		flex;
+	flex-direction:	row;
+	align-items:	center;
+	overflow-x:		auto;
+}
+
+build_area coatls .coatl_container::-webkit-scrollbar,
+other_build coatls .coatl_container::-webkit-scrollbar {
+	cursor:	pointer !important;
+	height:	8px;
+}
+
+build_area coatls .coatl_container::-webkit-scrollbar-track,
+other_build coatls .coatl_container::-webkit-scrollbar-track {
+	cursor:			pointer !important;
+	background:		#FFFFFF00;
+	border-radius:	4px;
+}
+
+build_area coatls .coatl_container::-webkit-scrollbar-thumb,
+other_build coatls .coatl_container::-webkit-scrollbar-thumb {
+	cursor:			pointer !important;
+	background:		rgba(127, 87, 23, 0.8);
+	border-radius:	4px;
+}
+
+build_area coatls .coatl_container::-webkit-scrollbar-button,
+other_build coatls .coatl_container::-webkit-scrollbar-button {
+	display: none;
+}
+
+build_area coatls .coatl_container .coatl,
+other_build coatls .coatl_container .coatl {
+	height:				68px;
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+}
+
+build_area coatls .coatl_container .coatl .box,
+other_build coatls .coatl_container .coatl .box {
+	position:	relative;
+	height:		68px;
+	width:		31px;
+}
+
+build_area coatls .coatl_container .coatl .box[type="head"],
+other_build coatls .coatl_container .coatl .box[type="head"] {
+	width: 65px;
+}
+
+build_area coatls .coatl_container .coatl .box[type="body"],
+other_build coatls .coatl_container .coatl .box[type="body"] {
+	width: 31px;
+}
+
+build_area coatls .coatl_container .coatl .box[type="tail"],
+other_build coatls .coatl_container .coatl .box[type="tail"] {
+	width: 70px;
+}
+
+build_area coatls .coatl_container .button_container .bgabutton {
+	width:		9px;
+	position:	relative;
+	overflow:	visible;
+}
+
+other_build coatls .coatl_container .button_container_left,
+build_area coatls .coatl_container .button_container_left {
+	margin-left:	auto;
+	margin-right:	25px;
+}
+build_area coatls .coatl_container .button_container_right,
+other_build coatls .coatl_container .button_container_right {
+	margin-left:	25px;
+	margin-right:	auto;
+}
+
+build_area coatls .coatl_container .button_container_left .bgabutton {
+	margin-left:	10px;
+	margin-right:	0;
+}
+
+build_area coatls .coatl_container .button_container_right .bgabutton {
+	margin-left:	0;
+	margin-right:	10px;
+}
+
+build_area coatls .card_container,
+other_build coatls .card_container {
+	height:				auto;
+	width:				100%;
+	margin-bottom:		10px;
+	display:			flex;
+	flex-wrap:			wrap;
+	row-gap:			5px;
+	align-items:		center;
+	justify-content:	center;
+}
+
+coatls .card_container score_token {
+	height:				60px;
+	width:				60px;
+	margin-right:		10px;
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+	background-image:	url(img/score.png);
+	background-repeat:	no-repeat;
+	background-size:	120px 120px;
+	filter:				drop-shadow(0px 0px 3px #000);
+	border-radius:		30px;
+}
+coatls .card_container score_token[active="false"] {
+	background:			linear-gradient(35deg, rgba(255, 255, 255, 0.2) 0%, rgba(175, 175, 165, 0.4) 100%),
+						url(img/score.png);
+	background-repeat:	no-repeat;
+	background-size:	120px 120px;
+}
+
+coatls[color="3F8AA4"] .card_container score_token {background-position: 0 0;}
+coatls[color="A74545"] .card_container score_token {background-position: -60px 0;}
+coatls[color="799C61"] .card_container score_token {background-position: 0 -60px;}
+coatls[color="FAB859"] .card_container score_token {background-position: -60px -60px;}
+
+coatls .card_container score_token span {
+	height:					95%;
+	padding-top:			5%;
+	width:					100%;
+	border-radius:			30px;
+	display:				flex;
+	justify-content:		center;
+	align-items:			center;
+	font-family:			aztec, serif;
+	font-size:				35px;
+	font-weight:			bolder;
+	background:				linear-gradient(35deg, rgba(173, 147, 48, 0.6) 0%, rgba(250, 161, 0, 0.6) 100%),
+							url(img/rulebook_background.jpg) no-repeat;
+	background-position:	center 0;
+	background-size:		auto 55px;
+	background-clip:		text;
+	color:					transparent;
+	filter:					drop-shadow(0px 1px 0.5px #000) drop-shadow(0px -0.5px 0.5px #000) drop-shadow(0.5px 0px 0.5px #000) drop-shadow(-0.5px 0px 0.5px #000);
+}
+
+coatls .card_container length_counter {
+	height:				35px;
+	width:				145px;
+	margin-right:		10px;
+	display:			flex;
+	align-items:		center;
+	justify-content:	center;
+	background-image:	url(img/coatl_length.png);
+	background-repeat:	no-repeat;
+	background-size:	auto 40px;
+}
+
+html:not(.coatl_length) coatls .card_container length_counter {
+	display: none;
+}
+
+coatls .card_container length_counter span {
+	height:				95%;
+	padding-top:		5%;
+	width:				100%;
+	display:			flex;
+	justify-content:	center;
+	align-items:		center;
+	font-family:		aztec, serif;
+	font-size:			35px;
+	font-weight:		bolder;
+	color:				#644C33;
+	filter:				drop-shadow(1px 1px 1.5px rgba(255, 255, 255, 0.5)) drop-shadow(1px -1px 1.5px rgba(255, 255, 255, 0.5)) drop-shadow(-1px 1px 1.5px rgba(255, 255, 255, 0.5)) drop-shadow(-1px -1px 1.5px rgba(255, 255, 255, 0.5));
+}
+
+coatls .card_container .add_card_button_container .bgabutton {
+	margin: 0 0 0 15px;
+}
+
+coatls .card_container .coatl_cards {
+	height: 70px !important;
+}
+coatls .card_container .coatl_temple_cards {
+	height: 82px !important;
+}
+coatls .card_container .coatl_temple_cards[active="true"] {
+	margin-left:	10px;
+	width:			200px !important;
+}
+
+build_area coatls .card_container .coatl_cards:not(:has(div)),
+other_build coatls .card_container .coatl_cards:not(:has(div)) {
+	height:			auto !important;
+	margin-left:	0;
+}
+
+.stockitem.prophecy_label {
+	height:				40.1px !important;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	background-size:	1241px 280.7px;
+	border:				1px solid rgb(0, 0, 0);
+	border-radius:		10px;
+	display:			flex;
+	justify-content:	center;
+	align-items:		center;
+}
+
+html.colorblind .stockitem.prophecy_label symbols {
+	font-size:			130%;
+	color:				#FFF;
+	text-shadow:		1px 1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, -1px -1px 1px #000;
+	bottom:				7px;
+	position:			absolute;
+	background-color:	rgba(0, 0, 0, 0.8);
+	padding-left:		5px;
+	padding-right:		5px;
+}
+html:not(.colorblind) .stockitem.prophecy_label symbols {
+	display: none;
+}
+html.colorblind .stockitem.prophecy_label card_color_symbol,
+html.colorblind .stockitem.prophecy_label card_color_symbol {
+	font-size:		200%;
+	color:			#FFF;
+	text-shadow:	1px 1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, -1px -1px 2px #000;
+	position:		absolute;
+	left:			147px;
+}
+html:not(.colorblind) .stockitem.prophecy_label card_color_symbol,
+html:not(.colorblind) .stockitem.prophecy_label card_color_symbol {
+	display: none;
+}
+
+prophecy_log_icon {
+	margin:				2px 0 2px 2px;
+	height:				28px !important;
+	width:				109.75px;
+	display:			inline-block;
+	position:			relative;
+	vertical-align:		top;
+	box-shadow:			0.5px 0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+	border:				2px solid rgb(0, 0, 0);
+	border-radius:		5px;
+	background-image:	url(img/prophecy_cards_label.jpg);
+	background-repeat:	no-repeat;
+	background-size:	auto 198px;
+}
+
+html.colorblind prophecy_log_icon:after {
+	bottom:				0;
+	left:				0;
+	right:				0;
+	top:				0;
+	font-size:			100%;
+	align-items:		center;
+	color:				#FFF;
+	display:			flex;
+	justify-content:	center;
+	position:			absolute;
+	text-shadow:		0.5px 0.5px 1px #000, 0.5px -0.5px 1px #000, -0.5px 0.5px 1px #000, -0.5px -0.5px 1px #000;
+}
+
+prophecy_log_icon[type="0"] {background-position: 0 0}
+html.colorblind prophecy_log_icon[type="0"]:after {content: "◆"}
+prophecy_log_icon[type="1"] {background-position: -109.75px 0}
+html.colorblind prophecy_log_icon[type="1"]:after {content: "⬟"}
+prophecy_log_icon[type="2"] {background-position: -219.5px 0}
+html.colorblind prophecy_log_icon[type="2"]:after {content: "■"}
+prophecy_log_icon[type="3"] {background-position: -329.25px 0}
+html.colorblind prophecy_log_icon[type="3"]:after {content: "●"}
+prophecy_log_icon[type="4"] {background-position: -439px 0}
+html.colorblind prophecy_log_icon[type="4"]:after {content: "▲"}
+prophecy_log_icon[type="5"] {background-position: -548.75px 0}
+html.colorblind prophecy_log_icon[type="5"]:after {content: "◆◆◆◆"}
+prophecy_log_icon[type="6"] {background-position: -658.5px 0}
+html.colorblind prophecy_log_icon[type="6"]:after {content: "⬟⬟⬟⬟"}
+prophecy_log_icon[type="7"] {background-position: -768.25px 0}
+html.colorblind prophecy_log_icon[type="7"]:after {content: "■■■■"}
+prophecy_log_icon[type="8"] {background-position: 0 -28px}
+html.colorblind prophecy_log_icon[type="8"]:after {content: "●●●●"}
+prophecy_log_icon[type="9"] {background-position: -109.75px -28px}
+html.colorblind prophecy_log_icon[type="9"]:after {content: "▲▲▲▲"}
+prophecy_log_icon[type="10"] {background-position: -219.5px -28px}
+html.colorblind prophecy_log_icon[type="10"]:after {content: "◆◆◆"}
+prophecy_log_icon[type="11"] {background-position: -329.25px -28px}
+html.colorblind prophecy_log_icon[type="11"]:after {content: "⬟⬟⬟"}
+prophecy_log_icon[type="12"] {background-position: -439px -28px}
+html.colorblind prophecy_log_icon[type="12"]:after {content: "■■■"}
+prophecy_log_icon[type="13"] {background-position: -548.75px -28px}
+html.colorblind prophecy_log_icon[type="13"]:after {content: "●●●"}
+prophecy_log_icon[type="14"] {background-position: -658.5px -28px}
+html.colorblind prophecy_log_icon[type="14"]:after {content: "▲▲▲"}
+prophecy_log_icon[type="15"] {background-position: -768.25px -28px}
+html.colorblind prophecy_log_icon[type="15"]:after {content: "◆●"}
+prophecy_log_icon[type="16"] {background-position: 0 -56px}
+html.colorblind prophecy_log_icon[type="16"]:after {content: "⬟■"}
+prophecy_log_icon[type="17"] {background-position: -109.75px -56px}
+html.colorblind prophecy_log_icon[type="17"]:after {content: "◆▲"}
+prophecy_log_icon[type="18"] {background-position: -219.5px -56px}
+html.colorblind prophecy_log_icon[type="18"]:after {content: "●▲"}
+prophecy_log_icon[type="19"] {background-position: -329.25px -56px}
+html.colorblind prophecy_log_icon[type="19"]:after {content: "■●"}
+prophecy_log_icon[type="20"] {background-position: -439px -56px}
+html.colorblind prophecy_log_icon[type="20"]:after {content: "◆■"}
+prophecy_log_icon[type="21"] {background-position: -548.75px -56px}
+html.colorblind prophecy_log_icon[type="21"]:after {content: "⬟▲"}
+prophecy_log_icon[type="22"] {background-position: -658.5px -56px}
+html.colorblind prophecy_log_icon[type="22"]:after {content: "■▲■▲"}
+prophecy_log_icon[type="23"] {background-position: -768.25px -56px}
+html.colorblind prophecy_log_icon[type="23"]:after {content: "◆⬟◆⬟"}
+prophecy_log_icon[type="24"] {background-position: 0 -84px}
+html.colorblind prophecy_log_icon[type="24"]:after {content: "⬟●⬟●"}
+prophecy_log_icon[type="25"] {background-position: -109.75px -84px}
+html.colorblind prophecy_log_icon[type="25"]:after {content: "⬟⬟⬟●●"}
+prophecy_log_icon[type="26"] {background-position: -219.5px -84px}
+html.colorblind prophecy_log_icon[type="26"]:after {content: "■■●●●"}
+prophecy_log_icon[type="27"] {background-position: -329.25px -84px}
+html.colorblind prophecy_log_icon[type="27"]:after {content: "◆◆▲▲▲"}
+prophecy_log_icon[type="28"] {background-position: -439px -84px}
+html.colorblind prophecy_log_icon[type="28"]:after {content: "▲▲◆◆"}
+prophecy_log_icon[type="29"] {background-position: -548.75px -84px}
+html.colorblind prophecy_log_icon[type="29"]:after {content: "⬟⬟▲▲"}
+prophecy_log_icon[type="30"] {background-position: -658.5px -84px}
+html.colorblind prophecy_log_icon[type="30"]:after {content: "■■◆◆"}
+prophecy_log_icon[type="31"] {background-position: -768.25px -84px}
+html.colorblind prophecy_log_icon[type="31"]:after {content: "●●⬟⬟"}
+prophecy_log_icon[type="32"] {background-position: 0 -112px}
+html.colorblind prophecy_log_icon[type="32"]:after {content: "◆■⬟●▲"}
+prophecy_log_icon[type="33"] {background-position: -109.75px -112px}
+html.colorblind prophecy_log_icon[type="33"]:after {content: "⬟■▲◆●"}
+prophecy_log_icon[type="34"] {background-position: -219.5px -112px}
+html.colorblind prophecy_log_icon[type="34"]:after {content: "■●⬟▲◆"}
+prophecy_log_icon[type="35"] {background-position: -329.25px -112px}
+html.colorblind prophecy_log_icon[type="35"]:after {content: "◆(■∞)⬟"}
+prophecy_log_icon[type="36"] {background-position: -439px -112px}
+html.colorblind prophecy_log_icon[type="36"]:after {content: "●(◆∞)■"}
+prophecy_log_icon[type="37"] {background-position: -548.75px -112px}
+html.colorblind prophecy_log_icon[type="37"]:after {content: "◆(▲∞)●"}
+prophecy_log_icon[type="38"] {background-position: -658.5px -112px}
+html.colorblind prophecy_log_icon[type="38"]:after {content: "▲(●∞)■"}
+prophecy_log_icon[type="39"] {background-position: -768.25px -112px}
+html.colorblind prophecy_log_icon[type="39"]:after {content: "⬟(■∞)▲"}
+prophecy_log_icon[type="40"] {background-position: 0 -140px}
+html.colorblind prophecy_log_icon[type="40"]:after {content: "⬟(▲∞)◆"}
+prophecy_log_icon[type="41"] {background-position: -109.75px -140px}
+html.colorblind prophecy_log_icon[type="41"]:after {content: "●(⬟∞)■"}
+prophecy_log_icon[type="42"] {background-position: -219.5px -140px}
+html.colorblind prophecy_log_icon[type="42"]:after {content: "●(◆∞)●"}
+prophecy_log_icon[type="43"] {background-position: -329.25px -140px}
+html.colorblind prophecy_log_icon[type="43"]:after {content: "▲(●∞)▲"}
+prophecy_log_icon[type="44"] {background-position: -439px -140px}
+html.colorblind prophecy_log_icon[type="44"]:after {content: "■◆(∞)◆■"}
+prophecy_log_icon[type="45"] {background-position: -548.75px -140px}
+html.colorblind prophecy_log_icon[type="45"]:after {content: "●■(∞)■●"}
+prophecy_log_icon[type="46"] {background-position: -658.5px -140px}
+html.colorblind prophecy_log_icon[type="46"]:after {content: "■▲(∞)▲■"}
+prophecy_log_icon[type="47"] {background-position: -768.25px -140px}
+html.colorblind prophecy_log_icon[type="47"]:after {content: "◆⬟(∞)⬟◆"}
+prophecy_log_icon[type="48"] {background-position: 0 -168px}
+html.colorblind prophecy_log_icon[type="48"]:after {content: "⬟▲(∞)▲⬟"}
+prophecy_log_icon[type="49"] {background-position: -109.75px -168px}
+html.colorblind prophecy_log_icon[type="49"]:after {content: "2◆ 2● 1⬟"}
+prophecy_log_icon[type="50"] {background-position: -219.5px -168px}
+html.colorblind prophecy_log_icon[type="50"]:after {content: "2■ 2▲ 1⬟"}
+prophecy_log_icon[type="51"] {background-position: -329.25px -168px}
+html.colorblind prophecy_log_icon[type="51"]:after {content: "2⬟ 2■ 1●"}
+prophecy_log_icon[type="52"] {background-position: -439px -168px}
+html.colorblind prophecy_log_icon[type="52"]:after {content: "2◆ 2■ 1⬟ 1▲"}
+prophecy_log_icon[type="53"] {background-position: -548.75px -168px}
+html.colorblind prophecy_log_icon[type="53"]:after {content: "2● 2▲ 1◆ 1■"}
+prophecy_log_icon[type="54"] {background-position: -658.5px -168px}
+html.colorblind prophecy_log_icon[type="54"]:after {content: "2◆ 2⬟ 1● 1▲"}
+temple_log_icon {
+	margin:				2px 0 2px 2px;
+	height:				56.75px !important;
+	width:				100px;
+	display:			inline-block;
+	position:			relative;
+	vertical-align:		top;
+	box-shadow:			0.5px 0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+	border:				2px solid rgb(0, 0, 0);
+	border-radius:		5px;
+	background-image:	url(img/temple_cards_label.jpg);
+	background-repeat:	no-repeat;
+	background-size:	auto 227px;
+}
+temple_log_icon[type="0"] {background-position: 0 0}
+temple_log_icon[type="1"] {background-position: -100px 0}
+temple_log_icon[type="2"] {background-position: -200px 0}
+temple_log_icon[type="3"] {background-position: -300px 0}
+temple_log_icon[type="4"] {background-position: -400px 0}
+temple_log_icon[type="5"] {background-position: -500px 0}
+temple_log_icon[type="6"] {background-position: 0 -56.75px}
+temple_log_icon[type="7"] {background-position: -100px -56.75px}
+temple_log_icon[type="8"] {background-position: -200px -56.75px}
+temple_log_icon[type="9"] {background-position: -300px -56.75px}
+temple_log_icon[type="10"] {background-position: -400px -56.75px}
+temple_log_icon[type="11"] {background-position: -500px -56.75px}
+temple_log_icon[type="12"] {background-position: 0 -113.5px}
+temple_log_icon[type="13"] {background-position: -100px -113.5px}
+temple_log_icon[type="14"] {background-position: -200px -113.5px}
+temple_log_icon[type="15"] {background-position: -300px -113.5px}
+temple_log_icon[type="16"] {background-position: -400px -113.5px}
+temple_log_icon[type="17"] {background-position: -500px -113.5px}
+temple_log_icon[type="18"] {background-position: 0 -170.25px}
+temple_log_icon[type="19"] {background-position: -100px -170.25px}
+
+.stockitem.temple_label {
+	width:				141px !important;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	background-size:	auto 320px;
+	border:				1px solid rgb(0, 0, 0);
+	border-radius:		10px;
+}
+
+.stockitem.prophecy_label .label_score_table {
+	height:				22px;
+	width:				100%;
+	position:			absolute;
+	display:			inline-flex;
+	flex-direction:		row;
+	justify-content:	center;
+	align-items:		center;
+	bottom:				-27px;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	font-family:		aztec, serif;
+	font-size:			17px;
+	color:				white;
+	user-select:		none;
+	border-radius:		5px;
+}
+
+.stockitem.temple_label .label_score_table {
+	height:				100%;
+	width:				45px;
+	position:			absolute;
+	display:			inline-flex;
+	flex-direction:		column;
+	justify-content:	space-evenly;
+	align-items:		center;
+	right:				-50px;
+	box-shadow:			3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+	font-family:		aztec, serif;
+	font-size:			17px;
+	color:				white;
+	user-select:		none;
+	border-radius:		5px;
+}
+
+.stockitem.prophecy_label .label_score_table div {
+	height:			91%;
+	padding-top:	1%;
+	width:			22%;
+	text-align:		center;
+	margin-left:	1.5%;
+	margin-right:	1.5%;
+	border-radius:	5px;
+	transition:		0.5s;
+}
+
+.stockitem.temple_label .label_score_table div {
+	height:			25%;
+	width:			95%;
+	text-align:		center;
+	margin-left:	1.5%;
+	margin-right:	1.5%;
+	border-radius:	5px;
+	transition:		0.5s;
+}
+
+build_area coatls .card_container .coatl_cards .stockitem[level="1"] .label_score_table div:nth-child(1),
+other_build coatls .card_container .coatl_cards .stockitem[level="1"] .label_score_table div:nth-child(1),
+build_area coatls .card_container .coatl_cards .stockitem[level="2"] .label_score_table div:nth-child(2),
+other_build coatls .card_container .coatl_cards .stockitem[level="2"] .label_score_table div:nth-child(2),
+build_area coatls .card_container .coatl_cards .stockitem[level="3"] .label_score_table div:nth-child(3),
+other_build coatls .card_container .coatl_cards .stockitem[level="3"] .label_score_table div:nth-child(3),
+build_area coatls .card_container .coatl_cards .stockitem[level="4"] .label_score_table div:nth-child(4),
+other_build coatls .card_container .coatl_cards .stockitem[level="4"] .label_score_table div:nth-child(4),
+build_area coatls .card_container .coatl_temple_cards .stockitem[level="1"] .label_score_table div:nth-child(1),
+other_build coatls .card_container .coatl_temple_cards .stockitem[level="1"] .label_score_table div:nth-child(1),
+build_area coatls .card_container .coatl_temple_cards .stockitem[level="2"] .label_score_table div:nth-child(2),
+other_build coatls .card_container .coatl_temple_cards .stockitem[level="2"] .label_score_table div:nth-child(2),
+build_area coatls .card_container .coatl_temple_cards .stockitem[level="3"] .label_score_table div:nth-child(3),
+other_build coatls .card_container .coatl_temple_cards .stockitem[level="3"] .label_score_table div:nth-child(3) {
+	background-color:	rgba(255, 255, 255);
+	color:				#D48D15;
+}
+
+build_area #new_coatl_button,
+build_area #assemble_button_play_area {
+	margin: 5px 0 5px 0;
+}
+
+build_area .bgabutton {
+	z-index: 4;
+}
+
+build_area coatls .coatl_overall .coatl_container[active="false"] .bgabutton {
+	display: none;
+}
+
+build_area coatls .coatl_overall .card_container[active="false"] .bgabutton {
+	display: none;
+}
+
+other_build {
+	width: calc(100% - 500px);
+}
+
+@media (width <= 1250px) {
+	other_build {
+		width: 100%;
+	}
+}
+
+hand_container {
+	display:		flex;
+	flex-direction:	column;
+	height:			auto;
+	width:			calc(100% - 500px);
+}
+
+@media (width <= 1250px) {
+	hand_container {
+		width: calc(100% - 20px);
+	}
+}
+
+hand_container #your_hand_label {
+	position:	relative;
+	top:		0;
+	left:		0;
+	text-align:	center;
+}
+
+hand_container hand {
+	display:	flex;
+	height:		auto;
+	width:		100%;
+}
+
+hand_container hand hand_prophecy {
+	z-index:	5;
+	padding:	0 0 0 0;
+	margin:		0 0 0 0;
+}
+hand_container hand[temples="0"] hand_prophecy {width: 100%;}
+hand_container hand[temples="1"] hand_prophecy {width: calc(100% - 190px);}
+hand_container hand[temples="2"] hand_prophecy {width: calc(100% - 380px);}
+hand_container hand[temples="0"] hand_temple {height: 0 !important; width: 0 !important;}
+hand_container hand[temples="1"] hand_temple {width: 190px !important;}
+hand_container hand[temples="2"] hand_temple {width: 380px !important;}
+
+.spectatorMode .no_spectator {
+	display: none;
+}
+
+.pageheader_menu,
+#pagesection_gameresult {
+	font-family: var(--font);
+}
+
+#pagesection_gameresult .pagesection:nth-child(1) {
+	background-image:		linear-gradient(rgba(255, 255, 255, 0.95), rgb(255, 255, 255, 0.95)),
+							url(img/prophecy_deck.jpg);
+	background-repeat:		no-repeat;
+	background-size:		110% auto;
+	background-position:	center;
+}
+
+#pagesection_gameresult .pagesection:nth-child(1) .name {
+	font-family: aztec, serif;
+}
+
+#spectatorbox_wrapper .player-board {
+	font-family:		var(--font);
+	background-image:	linear-gradient(rgba(255, 255, 255, 0.6), rgb(255, 255, 255, 0.8)),
+						url(img/rulebook_background_mirrored.jpg) !important;
+	background-size:	100% auto !important;
+	border-color:		black !important;
+	border-width:		1px;
+	margin-top:			6px;
+}
+
+gold_icon {
+	height:					28px;
+	width:					35px;
+	background:				url(img/pieces.png) no-repeat 0 0;
+	background-size:		200px auto;
+	background-position-x:	-82px;
+	background-position-y:	-234px;
+	transform:				rotate(-20deg);
+}
+
+:root {
+	--bga-jump-to_eye-url: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ctitle%3E eye %3C/title%3E%3Cpath d='M10 7.5a2.5 2.5 0 1 0 2.5 2.5A2.5 2.5 0 0 0 10 7.5zm0 7a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z'/%3E%3C/svg%3E%0A");
+}
+
+#bga-jump-to_controls {
+	position:		fixed;
+	top:			50%;
+	z-index:		5;
+	user-select:	none;
+}
+#bga-jump-to_controls.folded .bga-jump-to_link:not(.toggle) {
+	display: none;
+}
+#bga-jump-to_controls .bga-jump-to_link {
+	position:			relative;
+	border-width:		2px;
+	border-style:		solid;
+	border-color:		var(--color);
+	margin:				10px 0;
+	width:				fit-content;
+	cursor:				pointer;
+	height:				22px;
+	padding:			2px 5px;
+	background-image:	linear-gradient(rgba(255, 255, 255, 0.6), rgb(255, 255, 255, 0.8)),
+						url(img/rulebook_background_mirrored.jpg) !important;
+	background-size:	auto 100% !important;
+	color:				var(--color);
+	display:			flex;
+	align-items:		center;
+	gap:				5px;
+}
+#bga-jump-to_controls .bga-jump-to_link .bga-jump-to_avatar {
+	width:				20px;
+	height:				20px;
+	background-color:	#FFF;
+	outline:			1px solid #6A6A6A;
+	border-radius:		50%;
+	background-image:	var(--avatar-url);
+	display:			inline-block;
+	background-size:	cover;
+}
+#bga-jump-to_controls .bga-jump-to_link .bga-jump-to_label {
+	background:		var(--colorback);
+	font-family:	var(--font);
+}
+#bga-jump-to_controls .bga-jump-to_link.round-point {
+	border-radius:	0 11px 11px 0;
+	padding-right:	11px;
+}
+#bga-jump-to_controls .bga-jump-to_link.hexa-point {
+	border-right-width: 0;
+}
+#bga-jump-to_controls .bga-jump-to_link.hexa-point::before {
+	width:				0;
+	height:				0;
+	border-top:			15px solid transparent;
+	border-bottom:		15px solid transparent;
+	border-left-width:	11px;
+	border-left-style:	solid;
+	content:			"";
+	position:			absolute;
+	right:				-11px;
+	top:				-2px;
+}
+#bga-jump-to_controls .bga-jump-to_link.hexa-point::after {
+	width:			0;
+	height:			0;
+	border-top:		13px solid transparent;
+	border-bottom:	13px solid transparent;
+	border-left:	9px solid white;
+	content:		"";
+	position:		absolute;
+	right:			-9px;
+	top:			0px;
+}
+#bga-jump-to_controls .bga-jump-to_link.triangle-point {
+	border-right-width: 0;
+}
+#bga-jump-to_controls .bga-jump-to_link.triangle-point::before {
+	width:				0;
+	height:				0;
+	border-top:			15px solid transparent;
+	border-bottom:		15px solid transparent;
+	border-left-width:	15px;
+	border-left-style:	solid;
+	content:			"";
+	position:			absolute;
+	right:				-15px;
+	top:				-2px;
+}
+#bga-jump-to_controls .bga-jump-to_link.triangle-point::after {
+	width:			0;
+	height:			0;
+	border-top:		13px solid transparent;
+	border-bottom:	13px solid transparent;
+	border-left:	13px solid white;
+	content:		"";
+	position:		absolute;
+	right:			-13px;
+	top:			0px;
+}
+#bga-jump-to_controls .bga-jump-to_link .eye {
+	width:					20px;
+	height:					20px;
+	mask:					var(--bga-jump-to_eye-url) no-repeat center/contain;
+	-webkit-mask:			var(--bga-jump-to_eye-url) no-repeat center/contain;
+	background:				black;
+	background-size:		100% 100%;
+	background-repeat:		no-repeat;
+	background-position:	center;
+	background-color:		var(--color);
+	display:				inline-block;
+	vertical-align:			middle;
+}
+
+#bga-zoom-wrapper {
+	position: relative;
+}
+#bga-zoom-wrapper .bga-zoom-inner {
+	transform-origin: left top;
+}
+#bga-zoom-wrapper #bga-zoom-controls {
+	position:	absolute;
+	top:		0;
+}
+#bga-zoom-wrapper #bga-zoom-controls[data-position=top-left] {
+	left: 0;
+}
+#bga-zoom-wrapper #bga-zoom-controls[data-position=top-right] {
+	right: 0;
+}
+#bga-zoom-wrapper #bga-zoom-controls button {
+	border: 0;
+}
+#bga-zoom-wrapper #bga-zoom-controls button:not(.disabled) {
+	cursor: pointer;
+}
+#bga-zoom-wrapper #bga-zoom-controls button.disabled {
+	cursor:		not-allowed;
+	opacity:	0.5;
+}
+#bga-zoom-wrapper #bga-zoom-controls[data-color=white] .bga-zoom-out-icon {
+	width:		40px;
+	height:		40px;
+	background:	url("data:image/svg+xml;utf8,<svg width=\"100%\" height=\"100%\" viewBox=\"65 0 70 70\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" xmlns:serif=\"http://www.serif.com/\" style=\"fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;\"><g><g transform=\"matrix(1,0,0,1,-4.97116,-76.2244)\"><path d=\"M118,118C122.1,113.8 124.3,108.7 124.3,102.8C124.3,96.8 122.1,91.8 118,87.6C113.8,83.4 108.7,81.3 102.8,81.3C96.8,81.3 91.8,83.4 87.6,87.6C83.3,91.8 81.3,96.8 81.3,102.8C81.3,108.7 83.3,113.8 87.6,118C91.8,122.2 96.8,124.3 102.8,124.3C108.7,124.3 113.8,122.2 118,118\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-4.97116,-76.2244)\"><path d=\"M118,118L132.3,132.3\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-4.97116,-76.2244)\"><path d=\"M114.5,102.1L90.8,102.1\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g></g></svg>");
+}
+#bga-zoom-wrapper #bga-zoom-controls[data-color=white] .bga-zoom-in-icon {
+	width:		40px;
+	height:		40px;
+	background:	url("data:image/svg+xml;utf8,<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 70 70\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" xmlns:serif=\"http://www.serif.com/\" style=\"fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;\"><g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M23.8,102.1L35.7,102.1\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M35.7,102.1L47.5,102.1\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M35.7,102.1L35.7,90.3\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M51,118C55.2,113.8 57.3,108.7 57.3,102.8C57.3,96.8 55.2,91.8 51,87.6C46.8,83.4 41.7,81.3 35.8,81.3C29.9,81.3 24.8,83.4 20.6,87.6C16.4,91.8 14.3,96.8 14.3,102.8C14.3,108.7 16.4,113.8 20.6,118C24.8,122.2 29.9,124.3 35.8,124.3C41.7,124.3 46.8,122.2 51,118\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M35.7,113.9L35.7,102.1\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g><g transform=\"matrix(1,0,0,1,-7.91703,-76.2244)\"><path d=\"M65.3,132.3L51,118\" style=\"fill:none;fill-rule:nonzero;stroke:white;stroke-width:7px;\"/></g></g></svg>");
+}

@@ -1,0 +1,87 @@
+{
+  "100": {
+    "name": "Sacrifice Tokens",
+    "values": {
+      "1": {
+        "name": "Off",
+        "tmdisplay": ""
+      },
+      "2": {
+        "name": "On",
+        "tmdisplay": "Sacrifice Tokens",
+        "description": "Each player begins the game with 3 Sacrifice tokens. Instead of playing a standard action, you may discard a Sacrifice token to perform its action.",
+        "nobeginner": true
+      }
+    },
+    "default": 1
+  },
+  "101": {
+    "name": "Promo Cards",
+    "values": {
+      "1": {
+        "name": "Off",
+        "tmdisplay": ""
+      },
+      "2": {
+        "name": "On",
+        "tmdisplay": "Promo Cards",
+        "description": "The promo card pack contains six new Prophecy cards and five new Temple cards.",
+        "nobeginner": true
+      }
+    },
+    "default": 1,
+    "level": "additional"
+  },
+  "107": {
+    "name": "The Golden Feathers",
+    "values": {
+      "1": {
+        "name": "Off",
+        "tmdisplay": ""
+      },
+      "2": {
+        "name": "On",
+        "tmdisplay": "Golden Feathers",
+        "description": "This mini-expansion brings the interactivity of Cóatl: the Card Game to your Cóatl game by adding golden body segments and a new action: spend a golden body segment to steal up to 2 body segments from 1 opponent.",
+        "nobeginner": true
+      }
+    },
+    "default": 1,
+    "level": "additional"
+  },
+  "102": {
+    "name": "Less Body Pieces",
+    "values": {
+      "1": {
+        "name": "Off",
+        "description": "Put 24 body pieces of each color in the bag.",
+        "tmdisplay": ""
+      },
+      "2": {
+        "name": "On",
+        "tmdisplay": "Less Body Pieces",
+        "description": "For 2 players, put 14 body pieces of each color in the bag. For 3 players, put 18. The numbers of Heads and Tails don't change.",
+        "nobeginner": true
+      }
+    },
+    "displaycondition": [
+      {
+        "type": "minplayers",
+        "value": [
+          2,
+          3
+        ]
+      },
+      {
+        "type": "otheroption",
+        "id": 107,
+        "value": [
+          1
+        ]
+      }
+    ],
+    "notdisplayedmessage": "For 4 players, always put 24 body pieces of each color in the bag. (If The Golden Feathers expansion is On for 2 players, put 14 body pieces of each color in the bag. For 3 players, put 18. The numbers of Heads and Tails don't change.)",
+    "default": 1,
+    "level": "additional"
+  }
+}

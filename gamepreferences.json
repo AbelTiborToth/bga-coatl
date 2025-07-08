@@ -1,0 +1,80 @@
+{
+  "103": {
+    "name": "Background",
+    "values": {
+      "1": {
+        "name": "Thematic",
+        "cssPref": "thematic_background"
+      },
+      "2": {
+        "name": "BGA Default"
+      }
+    },
+    "default": 1
+  },
+  "104": {
+    "name": "Secondary font",
+    "values": {
+      "1": {
+        "name": "Thematic",
+        "cssPref": "thematic_font"
+      },
+      "2": {
+        "name": "BGA Default"
+      }
+    },
+    "default": 1
+  },
+  "105": {
+    "name": "Small card layout",
+    "needReload": true,
+    "values": {
+      "1": {
+        "name": "Only for Cóatl cards"
+      },
+      "2": {
+        "name": "For every card"
+      }
+    },
+    "default": 1
+  },
+  "106": {
+    "name": "Show Cóatl length",
+    "values": {
+      "1": {
+        "name": "On",
+        "cssPref": "coatl_length"
+      },
+      "2": {
+        "name": "Off"
+      }
+    },
+    "default": 1
+  },
+  "110": {
+    "name": "Colorblind support",
+    "values": {
+      "1": {
+        "name": "On",
+        "cssPref": "colorblind"
+      },
+      "2": {
+        "name": "Off"
+      }
+    },
+    "default": 2
+  },
+  "111": {
+    "name": "Show Give up button",
+    "values": {
+      "1": {
+        "name": "On"
+      },
+      "2": {
+        "name": "Off",
+        "cssPref": "giveup"
+      }
+    },
+    "default": 1
+  }
+}
