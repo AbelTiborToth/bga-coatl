@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Art files
+img/
+misc/
+
+# IDE files
+.vscode/
+.idea/
+_ide_helper.php
+
+# Dependency lock files
+package-lock.json
+yarn.lock

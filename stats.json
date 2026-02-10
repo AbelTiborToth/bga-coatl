@@ -1,0 +1,106 @@
+{
+  "table": {
+    "turns_number": {
+      "id": 10,
+      "name": "Number of turns",
+      "type": "int"
+    }
+  },
+  "player": {
+    "turns_number": {
+      "id": 10,
+      "name": "Number of turns",
+      "type": "int"
+    },
+    "taken_head_pieces": {
+      "id": 11,
+      "name": "Number of taken Head pieces",
+      "type": "int"
+    },
+    "taken_body_pieces": {
+      "id": 12,
+      "name": "Number of taken Body pieces",
+      "type": "int"
+    },
+    "taken_tail_pieces": {
+      "id": 13,
+      "name": "Number of taken Tail pieces",
+      "type": "int"
+    },
+    "taken_prophecy_cards": {
+      "id": 14,
+      "name": "Number of taken Prophecy cards",
+      "type": "int"
+    },
+    "completed_coatls": {
+      "id": 15,
+      "name": "Number of completed Cóatls",
+      "type": "int"
+    },
+    "coatl_score_1": {
+      "id": 16,
+      "name": "Score from 1st completed Cóatl",
+      "type": "int"
+    },
+    "coatl_score_2": {
+      "id": 17,
+      "name": "Score from 2nd completed Cóatl",
+      "type": "int"
+    },
+    "coatl_score_3": {
+      "id": 18,
+      "name": "Score from 3rd completed Cóatl",
+      "type": "int"
+    },
+    "coatl_score_average": {
+      "id": 19,
+      "name": "Average score for a completed Cóatl",
+      "type": "float"
+    },
+    "coatl_score_max": {
+      "id": 20,
+      "name": "Highest score for a completed Cóatl",
+      "type": "int"
+    },
+    "coatl_length_average": {
+      "id": 21,
+      "name": "Average length of a completed Cóatl",
+      "type": "float"
+    },
+    "fulfilled_prophecy_cards": {
+      "id": 22,
+      "name": "Number of fulfilled Prophecy cards on completed Cóatls",
+      "type": "int"
+    },
+    "fulfilled_temple_cards": {
+      "id": 23,
+      "name": "Number of fulfilled Temple cards on completed Cóatls",
+      "type": "int"
+    },
+    "piece_sacrifice_used": {
+      "id": 24,
+      "name": "\"Perfect Pick\" (piece) Sacrifice token used",
+      "type": "bool"
+    },
+    "prophecy_sacrifice_used": {
+      "id": 25,
+      "name": "\"See the Future\" (prophecy) Sacrifice token used",
+      "type": "bool"
+    },
+    "temple_sacrifice_used": {
+      "id": 26,
+      "name": "\"Priest Commitment\" (temple) Sacrifice token used",
+      "type": "bool"
+    },
+    "gold_used": {
+      "id": 27,
+      "name": "Used Golden Feathers (to steal)",
+      "type": "int"
+    },
+    "gold_received": {
+      "id": 28,
+      "name": "Received Golden Feathers (from others)",
+      "type": "int"
+    }
+  }
+}
