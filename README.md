@@ -27,13 +27,13 @@ Thank you!
 
 [<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" width="120"/>](https://www.buymeacoffee.com/abeltibortoth)
 
+### Thanks for playing!
+
+[just calling you to follow up](https://youtu.be/2ZeMOoiUHng?list=RD2ZeMOoiUHng).
+
 ## ELTE IK PTI BSC szakdolgozat
 
 Jelen program végzős egyetemi hallgatóként, az Eötvös Loránd Tudományegyetem informatikai karának, programtervező informatikus alapképzésén készített
 szakdolgozatom.
 
 [Magyar nyelvű dokumentáció](szakdolgozat.pdf).
-
-### Thanks for playing!
-
-[just calling you to follow up](https://youtu.be/2ZeMOoiUHng?list=RD2ZeMOoiUHng).
