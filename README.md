@@ -23,8 +23,6 @@ every [Board Game Arena](https://boardgamearena.com/) user, without any limitati
 You can support the designers by purchasing a physical copy of the game, or the developer of the digital version
 on [Buy Me a Coffee](https://buymeacoffee.com/abeltibortoth).
 
-Thank you!
-
 [<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" width="120"/>](https://www.buymeacoffee.com/abeltibortoth)
 
 ### Thanks for playing!
